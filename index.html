@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070b10">
+
+    <title>TIID Ready | Ingeniería en TI e Innovación Digital</title>
+
+    <!-- Archivos de la PWA -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="img/icon-192.png">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ========== BARRA DE NAVEGACIÓN SUPERIOR ========== -->
+    <header class="barra">
+        <div class="barra__contenido">
+
+            <a href="#inicio" class="logo">
+                <span class="icono-circulo">TI</span>
+                <span class="logo__texto">TIID<b>Ready</b></span>
+            </a>
+
+            <!-- Botón de menú (solo se ve en celular) -->
+            <button class="barra__boton" id="botonMenu" aria-label="Abrir menú">☰</button>
+
+            <nav class="menu" id="menu">
+                <a href="#inicio" class="menu__link activo">Inicio</a>
+                <a href="#mapa" class="menu__link">Mapa curricular</a>
+                <a href="#habilidades" class="menu__link">Habilidades</a>
+                <a href="#perfil" class="menu__link">Tu perfil</a>
+                <a href="#prepararse" class="menu__link">Prepárate</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- ========== INICIO ========== -->
+        <section id="inicio" class="seccion activa">
+
+            <div class="hero">
+
+                <!-- Columna izquierda: texto -->
+                <div class="hero__texto">
+                    <p class="hero__etiqueta">&gt; bienvenido_nuevo_ingreso</p>
+                    <h1>Ingeniería en <span>Tecnologías de la Información</span> e Innovación Digital</h1>
+                    <p>Descubre todo lo que vas a aprender, hacer y vivir durante tu carrera en la UTOM.</p>
+                    <a href="#mapa" class="boton">Ver mapa curricular →</a>
+                </div>
+
+                <!-- Columna derecha: terminal decorativa -->
+                <div class="terminal">
+                    <div class="terminal__barra">
+                        <i></i><i></i><i></i>
+                        <span>carrera.js</span>
+                    </div>
+                    <pre class="terminal__codigo"><b>const</b> carrera = {
+  nombre:   <em>"TI e Innovación Digital"</em>,
+  duracion: <em>"10 cuatrimestres"</em>,
+  salida1:  <em>"TSU Desarrollo de Software"</em>,
+  salida2:  <em>"Ingeniería"</em>,
+  estadias: <em>2</em>,
+  ingles:   <em>"8 niveles"</em>,
+  inscripciones: <em>"abiertas"</em>
+};</pre>
+                </div>
+
+            </div>
+
+            <div class="estadisticas">
+                <div class="estadistica"><b>10</b><span>Cuatrimestres</span></div>
+                <div class="estadistica"><b>5,350</b><span>Horas totales</span></div>
+                <div class="estadistica"><b>338.48</b><span>Créditos</span></div>
+                <div class="estadistica"><b>2</b><span>Estadías de 600 h</span></div>
+            </div>
+
+            <h2 class="titulo">Tu camino en 3 ciclos</h2>
+
+            <div class="ciclos">
+                <article class="tarjeta ciclo-1">
+                    <h3>Ciclo 1 · 1° a 3°</h3>
+                    <p>Bases de programación, redes, matemáticas y bases de datos.</p>
+                </article>
+                <article class="tarjeta ciclo-2">
+                    <h3>Ciclo 2 · 4° a 6°</h3>
+                    <p>Web, apps móviles, ingeniería de software y Estadía de TSU.</p>
+                </article>
+                <article class="tarjeta ciclo-3">
+                    <h3>Ciclo 3 · 7° a 10°</h3>
+                    <p>IA, ciencia de datos, IoT, seguridad, forense y Estadía de Ingeniería.</p>
+                </article>
+            </div>
+
+            <div class="aviso">
+                <span class="icono-circulo">🎓</span>
+                <p>Al terminar el 6° cuatrimestre obtienes el título de <b>Técnico Superior Universitario en
+                        Desarrollo de Software Multiplataforma</b>.</p>
+            </div>
+
+        </section>
+
+        <!-- ========== MAPA CURRICULAR ========== -->
+        <section id="mapa" class="seccion">
+            <h2 class="titulo">Mapa curricular</h2>
+
+            <input type="search" id="buscador" class="buscador" placeholder="Buscar materia (redes, IA, bases de datos...)">
+
+            <!-- Los botones de filtro se crean desde app.js -->
+            <div class="filtros" id="filtros"></div>
+
+            <!-- Las materias se crean desde app.js -->
+            <div id="listaMaterias"></div>
+        </section>
+
+        <!-- ========== HABILIDADES ========== -->
+        <section id="habilidades" class="seccion seccion--llena">
+            <h2 class="titulo">Lo que podrás hacer</h2>
+
+            <!-- Las tarjetas se crean desde app.js -->
+            <div class="grid-habilidades" id="listaHabilidades"></div>
+        </section>
+
+        <!-- ========== PERFIL ========== -->
+        <section id="perfil" class="seccion seccion--llena">
+            <h2 class="titulo">¿Qué perfil va contigo?</h2>
+
+            <!-- Panel de resultado (se actualiza desde app.js) -->
+            <div class="perfil__panel">
+                <h3 id="perfilTitulo">Elige lo que más te emociona</h3>
+                <p id="perfilTexto">Toca una de las opciones para descubrir tu perfil ideal y las materias que te esperan.</p>
+                <div class="perfil__materias" id="perfilMaterias"></div>
+            </div>
+
+            <!-- Las 4 opciones se crean desde app.js -->
+            <div class="grid-perfil" id="opcionesPerfil"></div>
+        </section>
+
+        <!-- ========== PREPÁRATE ========== -->
+        <section id="prepararse" class="seccion seccion--llena">
+            <h2 class="titulo">Prepárate desde hoy</h2>
+
+            <div class="grid-prepararse">
+
+                <article class="prep-card">
+                    <span class="icono-circulo">🚀</span>
+                    <h3>Antes de entrar</h3>
+                    <ul>
+                        <li>Practica lógica con retos de código (Scratch, PSeInt o Python).</li>
+                        <li>Repasa álgebra y fracciones.</li>
+                        <li>Empieza a leer y practicar inglés: tendrás 8 niveles.</li>
+                        <li>Crea tu cuenta de GitHub.</li>
+                        <li>Instala VS Code y escribe tu primera página web.</li>
+                        <li>Pierde el miedo a preguntar y a equivocarte.</li>
+                    </ul>
+                </article>
+
+                <article class="prep-card">
+                    <span class="icono-circulo">🛠️</span>
+                    <h3>Durante la carrera</h3>
+                    <ul>
+                        <li>Arma un portafolio con cada Proyecto Integrador.</li>
+                        <li>Participa en hackatones y comunidades tech.</li>
+                        <li>Desarrolla liderazgo y trabajo en equipo.</li>
+                        <li>Elige tus optativas según el perfil que quieras.</li>
+                        <li>Aprovecha las estadías para conocer el mundo laboral.</li>
+                        <li>Sigue aprendiendo: la tecnología cambia rápido.</li>
+                    </ul>
+                </article>
+
+                <article class="prep-card prep-card--contacto">
+                    <span class="icono-circulo">📍</span>
+                    <h3>Contacto</h3>
+                    <ul class="contacto">
+                        <li><b>Universidad:</b> UTOM, Universidad Pública en Maravatío, Michoacán</li>
+                        <li><b>Informes:</b> 447-150-8913</li>
+                        <li><b>Sitio web:</b> <a href="https://www.utom.edu.mx">www.utom.edu.mx</a></li>
+                        <li><b>Estado:</b> inscripciones abiertas</li>
+                    </ul>
+                    <a href="https://www.utom.edu.mx" class="boton">Visitar sitio de la UTOM →</a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>TIID Ready · Universidad Tecnológica del Oriente de Michoacán</p>
+    </footer>
+
+    <!-- Scripts: primero los datos, después la lógica -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
